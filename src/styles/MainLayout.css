@@ -1,0 +1,64 @@
+.App {
+  font-family: 'Poppins';
+}
+
+.hero {
+  background-color: #0C4B54;
+  display: flex;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 2rem;
+  gap: 1rem;
+}
+.hero-content p {
+  color: white;
+}
+.hero-content h1 {
+  font-size: 5rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.hero-content span {
+  color: #E8F549;
+}
+
+.hero img {
+  height: 40%;
+  width: 45%;
+}
+
+.hero-buttons{
+  display: flex;
+  margin-top: 3rem;
+  gap: 1rem;
+}
+
+.get-started {
+  background-color: #E8F549;
+  color: #0C4B54;
+}
+
+.watch-features {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #E8F549;
+}
+
+.mission-button {
+  background-color: transparent;
+  border: 1px solid #E8F549;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.mission-button .icon {
+  margin-right: 8px;
+}

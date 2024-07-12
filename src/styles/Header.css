@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  background-color: #0C4B54;
+}
+.logo{
+  font-size: 2rem;
+  font-weight: bold;
+  
+}
+.nav a, .nav button {
+  margin: 0 10px;
+}
+
+.chat{
+  border: 1px solid #E8F549;
+}
+.chat:hover {
+  background-color: #E8F549;
+  color: #0C4B54;
+  font-size: medium;
+  border: none;
+  transition: 0.5s all ease-out;
+}
+  

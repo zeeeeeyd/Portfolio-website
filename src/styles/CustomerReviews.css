@@ -1,0 +1,34 @@
+.customer-reviews {
+  padding: 0px 20px;
+  margin-bottom: 3rem;
+}
+.customer-reviews-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 2%;
+}
+.customer-reviews-content h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  max-width: 60%;
+}
+.reviews {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+  
+.more-reviews {
+  border:1px solid #0C4B54;
+  color: #0C4B54;
+  height: 3rem;
+}
+
+.more-reviews:hover {
+  background-color: #0C4B54;
+  color: #fff;
+  border: none;
+  transition: 0.5s all ease-out;
+}
+  

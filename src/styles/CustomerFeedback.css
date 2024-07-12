@@ -1,0 +1,30 @@
+.customer-feedback {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 250px;
+  background-color: #f0f0f0;
+  border-radius: .5rem;
+  padding: 2rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.customer-feedback:hover{
+  transform: scale(1.05);
+}
+  
+.customer-feedback img {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+}
+  
+.customer-feedback h3 {
+  margin: 10px 0;
+}
+  
+.customer-feedback p {
+  font-size: 14px;
+}
+  
