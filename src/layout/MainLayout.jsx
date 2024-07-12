@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaPlay } from 'react-icons/fa'; 
+import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import AboutUs from '../components/AboutUs';
 import CustomerReviews from '../components/CustomerReviews';
@@ -15,31 +16,97 @@ const MainLayout = () => {
     window.scrollTo({ top: document.querySelector('.work-experience').offsetTop, behavior:'smooth' });
   };
 
-  const handleClickStart = () =>{
+  const handleClickStart = () => {
     window.scrollTo({ top: document.querySelector('.get-started').offsetTop, behavior:'smooth' });
   }
+
   return (
     <div className="App">
       <Header />
       <main>
         <section className="hero">
           <div className='hero-content'>
-            <button className='mission-button'>
+            <motion.button 
+              className='mission-button'
+              whileHover={{ scale: 1.1 }}
+            >
               <FaPlay className='icon' /> Find out our missions!
-            </button>
-            <h1>Your <span>Trusted</span> Partner in Digital Innovation.</h1>
-            <p>We blend creativity with cutting-edge technology to craft customized solutions that meet the unique needs of modern businesses. Partner with us to bring your vision to life and stay ahead in the digital landscape.</p>
+            </motion.button>
+            <motion.h1
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
+              Your <span>Trusted</span> Partner in Digital Innovation.
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.5 }}
+            >
+              We blend creativity with cutting-edge technology to craft customized solutions that meet the unique needs of modern businesses. Partner with us to bring your vision to life and stay ahead in the digital landscape.
+            </motion.p>
             <div className="hero-buttons">
-              <button className="get-started" onClick={handleClickStart}>Get Started</button>
-              <button className="watch-features" onClick={handleClickFeatures}>Watch Our Features</button>
+              <motion.button 
+                className="get-started" 
+                onClick={handleClickStart}
+                whileHover={{ scale: 1.1 }}
+              >
+                Get Started
+              </motion.button>
+              <motion.button 
+                className="watch-features" 
+                onClick={handleClickFeatures}
+                whileHover={{ scale: 1.1 }}
+              >
+                Watch Our Features
+              </motion.button>
             </div>
           </div>
-          <img src={hero} alt="Hero" />
+          <motion.img 
+            src={hero} 
+            alt="Hero" 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+          />
         </section>
-        <section id="about"><AboutUs /></section>
-        <section id="customer-reviews"><CustomerReviews /></section>
-        <section id="features"><WorkExperience /></section>
-        <section id="faq"><FAQ /></section>
+        <section id="about">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <AboutUs />
+          </motion.div>
+        </section>
+        <section id="customer-reviews">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <CustomerReviews />
+          </motion.div>
+        </section>
+        <section id="features" className="work-experience">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <WorkExperience />
+          </motion.div>
+        </section>
+        <section id="faq">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <FAQ />
+          </motion.div>
+        </section>
         <Footer />
       </main>
     </div>
