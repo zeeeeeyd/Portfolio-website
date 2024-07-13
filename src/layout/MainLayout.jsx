@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaPlay } from 'react-icons/fa'; 
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Header from '../components/Header';
 import AboutUs from '../components/AboutUs';
 import CustomerReviews from '../components/CustomerReviews';
@@ -11,6 +12,8 @@ import Footer from '../components/Footer ';
 import WorkExperience from '../components/WorkExperience ';
 
 const MainLayout = () => {
+
+  const { t } = useTranslation();
 
   const handleClickFeatures = () => {
     window.scrollTo({ top: document.querySelector('.work-experience').offsetTop, behavior:'smooth' });
@@ -30,21 +33,21 @@ const MainLayout = () => {
               className='mission-button'
               whileHover={{ scale: 1.1 }}
             >
-              <FaPlay className='icon' /> Find out our missions!
+              <FaPlay className='icon' /> {t('Find out our missions!')}
             </motion.button>
             <motion.h1
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              Your <span>Trusted</span> Partner in Digital Innovation.
+              {t('Your')} <span>{t('Trusted')}</span> {t('Partner in Digital Innovation.')}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
             >
-              We blend creativity with cutting-edge technology to craft customized solutions that meet the unique needs of modern businesses. Partner with us to bring your vision to life and stay ahead in the digital landscape.
+              {t('We blend creativity with cutting-edge technology to craft customized solutions that meet the unique needs of modern businesses. Partner with us to bring your vision to life and stay ahead in the digital landscape.')}
             </motion.p>
             <div className="hero-buttons">
               <motion.button 
@@ -52,14 +55,14 @@ const MainLayout = () => {
                 onClick={handleClickStart}
                 whileHover={{ scale: 1.1 }}
               >
-                Get Started
+                {t('Get Started')}
               </motion.button>
               <motion.button 
                 className="watch-features" 
                 onClick={handleClickFeatures}
                 whileHover={{ scale: 1.1 }}
               >
-                Watch Our Features
+                {t('Watch Our Features')}
               </motion.button>
             </div>
           </div>

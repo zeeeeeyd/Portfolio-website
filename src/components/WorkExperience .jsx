@@ -4,40 +4,43 @@ import savdoImg from '../assets/999.jpg';
 import careServiceImg from '../assets/777.png';
 import marketAnalysisImg from '../assets/888.jpg';
 import campaignManagementImg from '../assets/100.jpg';
+import { useTranslation } from 'react-i18next';
 
 const WorkExperience = () => {
+  const { t } = useTranslation();
+
   const workItems = [
     {
-      title: 'UI/UX Service',
+      title: t('UI/UX Service'),
       image: savdoImg,
-      description: 'Creating user-friendly interfaces and experiences.',
+      description: t('Creating user-friendly interfaces and experiences.'),
       link: '#'
     },
     {
-      title: 'Software Dev',
+      title: t('Software Dev'),
       image: careServiceImg,
-      description: 'Developing robust software solutions.',
+      description: t('Developing robust software solutions.'),
       link: '#'
     },
     {
-      title: 'AI Based Solutions',
+      title: t('AI Based Solutions'),
       image: marketAnalysisImg,
-      description: 'Leveraging AI for innovative solutions.',
+      description: t('Leveraging AI for innovative solutions.'),
       link: '#'
     },
     {
-      title: 'Social Media Marketing',
+      title: t('Social Media Ads'),
       image: campaignManagementImg,
-      description: 'Managing and optimizing social media campaigns.',
+      description: t('Managing and optimizing social media campaigns.'),
       link: '#'
     },
   ];
 
   return (
-    <section className="work-experience" id='features'>
+    <section className="work-experience" id="features">
       <div className="work-header">
-        <h2>Our Work Experience</h2>
-        <p>Journey Through Design: Unveiling My Work Experience. A Comprehensive Exploration of My Design Journey and Professional Evolution.</p>
+        <h2>{t('Our Work Experience')}</h2>
+        <p>{t('Journey Through Development : Unveiling Our Work Experience. A Comprehensive Exploration of our dev Journey and Professional Evolution.')}</p>
       </div>
       <div className="work-grid">
         <div className="work-column left">
@@ -47,7 +50,7 @@ const WorkExperience = () => {
             <div className="work-item-content">
               <h3>{workItems[0].title}</h3>
               <p>{workItems[0].description}</p>
-              <button href={workItems[0].link} className="explore-button">Explore more</button>
+              <button href={workItems[0].link} className="explore-button">{t('Explore more')}</button>
             </div>
           </div>
         </div>
@@ -58,7 +61,7 @@ const WorkExperience = () => {
             <div className="work-item-content">
               <h3>{workItems[1].title}</h3>
               <p>{workItems[1].description}</p>
-              <button href={workItems[1].link} className="explore-button">Explore more</button>
+              <button href={workItems[1].link} className="explore-button">{t('Explore more')}</button>
             </div>
           </div>
           <div className="work-item">
@@ -67,7 +70,7 @@ const WorkExperience = () => {
             <div className="work-item-content">
               <h3>{workItems[2].title}</h3>
               <p>{workItems[2].description}</p>
-              <button href={workItems[2].link} className="explore-button">Explore more</button>
+              <button href={workItems[2].link} className="explore-button">{t('Explore more')}</button>
             </div>
           </div>
         </div>
@@ -78,7 +81,7 @@ const WorkExperience = () => {
             <div className="work-item-content">
               <h3>{workItems[3].title}</h3>
               <p>{workItems[3].description}</p>
-              <button href={workItems[3].link} className="explore-button">Explore more</button>
+              <button href={workItems[3].link} className="explore-button">{t('Explore more')}</button>
             </div>
           </div>
         </div>
