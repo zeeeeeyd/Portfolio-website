@@ -2,13 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   color: white;
   background-color: #0C4B54;
 }
 .logo{
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 600;
   
 }
 .nav a, .nav button {
