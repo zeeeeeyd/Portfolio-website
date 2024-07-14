@@ -4,22 +4,22 @@
   align-items: center;
   padding: 10px;
   color: white;
-  background-color: #0C4B54;
+  background-color: #020617 ;
 }
 .logo{
-  font-size: 2rem;
-  font-weight: 600;
-  
+  border: none;  
+  font-size: 1.3rem;
+  font-family: 'Poppins';
 }
 .nav a, .nav button {
   margin: 0 10px;
 }
 .chat{
-  border: 1px solid #E8F549;
+  border: 1px solid var(--secondary-color);
 }
 .chat:hover {
-  background-color: #E8F549;
-  color: #0C4B54;
+  background-color: var(--secondary-color);
+  color: white;
   font-size: medium;
   border: none;
   transition: 0.5s all ease-out;

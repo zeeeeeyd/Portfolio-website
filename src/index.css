@@ -2,6 +2,8 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  --primary-color : #3572EF;
+  --secondary-color : #3ABEF9;
 
   color-scheme: light dark;
   color: rgba(35, 35, 35, 0.87);
@@ -19,7 +21,7 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #E8F549;
+  color: var(--secondary-color);
 }
 
 body {
@@ -47,7 +49,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #E8F549;
+  border-color: var(--secondary-color);
 }
 /* button:focus,
 button:focus-visible {

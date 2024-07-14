@@ -38,7 +38,6 @@
 }
 
 .faq-question {
-  background-color: #0C4B54;
   color: white;
   padding: 15px;
   display: flex;
@@ -47,7 +46,6 @@
 }
 
 .faq-question.active {
-  background-color: #0C4B54;
   color: white;
 }
 
@@ -70,6 +68,5 @@
 .faq-answer p {
   padding: 15px;
   margin: 0;
-  background-color: #0C4B54;
   color: white;
 }

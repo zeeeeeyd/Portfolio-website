@@ -3,12 +3,20 @@ import { Link } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
 import '../styles/Header.css';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+
+  const navigate = useNavigate();
   const { t } = useTranslation();
+
+  const handleClick = () => {
+    navigate('/');
+  }
+  
   return (
     <header className="header">
-      <div className="logo">Sirius</div>
+      <button onClick={handleClick} className="logo">Sirius</button>
       <nav className="nav">
         <Link style={{cursor:'pointer'}} to="about" smooth={true} duration={500}>{t('About Us')}</Link>
         <Link style={{cursor:'pointer'}} to="faq" smooth={true} duration={500}>{t('FAQ')}</Link>

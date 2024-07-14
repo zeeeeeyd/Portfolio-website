@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import '../styles/FAQ.css';
+import { motion , useMotionValue, animate } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
+const COLORS_TOP = ["#3572EF", "#3ABEF9", "#615EFC"];
+
 const FAQ = () => {
+
+  const color = useMotionValue(COLORS_TOP[0]);
   const [selected, setSelected] = useState(null);
   const { t } = useTranslation();
 
@@ -12,6 +17,15 @@ const FAQ = () => {
     }
     setSelected(index);
   };
+
+  useEffect(() => {
+    animate(color, COLORS_TOP, {
+      ease: "easeInOut",
+      duration: 10,
+      repeat: Infinity,
+      repeatType: "mirror",
+    });
+  }, [color]);
 
   const faqs = [
     {
@@ -43,13 +57,13 @@ const FAQ = () => {
             key={index}
             onClick={() => toggle(index)}
           >
-            <div className={`faq-question ${selected === index ? 'active' : ''}`}>
+            <motion.div style={{ backgroundColor: color }} className={`faq-question ${selected === index ? 'active' : ''}`}>
               <h2>{faq.question}</h2>
               <span>{selected === index ? '-' : '+'}</span>
-            </div>
-            <div className="faq-answer" style={{ maxHeight: selected === index ? '200px' : '0' }}>
+            </motion.div>
+            <motion.div className="faq-answer" style={{backgroundColor: color}}>
               <p>{faq.answer}</p>
-            </div>
+            </motion.div>
           </div>
         ))}
       </div>

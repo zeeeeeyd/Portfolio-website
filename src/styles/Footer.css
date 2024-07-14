@@ -1,5 +1,5 @@
 .footer {
-    background-color: #0C4B54;
+    background-color: #020617;
     color: #fff;
     padding: 40px 20px;
     text-align: center;
@@ -19,8 +19,7 @@
 }
   
 .footer-buttons button {
-    background-color: #E8F549;
-    color: #0C4B54;
+    color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -33,10 +32,7 @@
 .footer-buttons button.view-work {
     background-color: #eefbff;
 }
-  
-.footer-buttons button:hover {
-    background-color: #d4e13b;
-}
+
   
 .footer-content {
     display: flex;
@@ -70,7 +66,7 @@
 }
   
 .footer-section ul li a:hover {
-    color: #E8F549;
+    color: var(--secondary-color);
 }
   
 .footer-social a {
@@ -81,7 +77,7 @@
 }
   
 .footer-social a:hover {
-    color: #E8F549;
+    color: var(--secondary-color);
 }
   
 .footer-bottom {
@@ -107,6 +103,6 @@
 }
   
 .footer-bottom ul li a:hover {
-    color: #E8F549;
+    color: var(--secondary-color);
 }
   

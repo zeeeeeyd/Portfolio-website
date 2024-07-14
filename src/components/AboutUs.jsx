@@ -1,17 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
+import { motion , useMotionValue, animate } from 'framer-motion';
 import '../styles/AboutUs.css';
 import { useTranslation } from 'react-i18next';
 import about from '../assets/555.png';
 import immg from '../assets/666.png';
 
+const COLORS_TOP = ["#3572EF", "#3ABEF9", "#615EFC"];
+
 const AboutUs = () => {
+
+  const color = useMotionValue(COLORS_TOP[0]);
   const [showStory, setShowStory] = useState(false);
   const { t } = useTranslation();
 
   const handleReadStory = () => {
     setShowStory(!showStory);
   };
+
+  useEffect(() => {
+    animate(color, COLORS_TOP, {
+      ease: "easeInOut",
+      duration: 10,
+      repeat: Infinity,
+      repeatType: "mirror",
+    });
+  }, [color]);
 
   return (
     <section className="about-us" id="about">
@@ -32,10 +46,10 @@ const AboutUs = () => {
           <p>{t('Guiding You Through Our Journey and Creative Evolution')}</p>
         </>
       )}
-      <button className="read-story" onClick={handleReadStory}>
+      <motion.button className="read-story" onClick={handleReadStory} style={{ backgroundColor: color }}>
         {showStory ? t('Hide Story') : t('Read Our Story')}{' '}
         {showStory ? <FaArrowLeft className="icon" /> : <FaArrowRight className="icon" />}
-      </button>
+      </motion.button>
     </section>
   );
 };

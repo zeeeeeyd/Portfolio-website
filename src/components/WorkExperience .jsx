@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/WorkExperience.css';
 import savdoImg from '../assets/999.jpg';
 import careServiceImg from '../assets/777.png';
@@ -6,10 +6,30 @@ import marketAnalysisImg from '../assets/888.jpg';
 import campaignManagementImg from '../assets/100.jpg';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom'; 
+import { motion, useMotionTemplate, useMotionValue, animate, useTransform } from 'framer-motion';
+import { Canvas } from '@react-three/fiber';
+import { Stars } from '@react-three/drei';
+
+const COLORS_TOP = ["#3572EF", "#3ABEF9", "#615EFC"];
 
 const WorkExperience = () => {
+
   const { t } = useTranslation();
   const navigate = useNavigate();
+
+  const color = useMotionValue(COLORS_TOP[0]);
+
+  useEffect(() => {
+    animate(color, COLORS_TOP, {
+      ease: "easeInOut",
+      duration: 10,
+      repeat: Infinity,
+      repeatType: "mirror",
+    });
+  }, [color]);
+
+  const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 100%, #020617 50%, ${color})`;
+
 
   const handleUiuxClick = () => {
     navigate('/UI-UX');
@@ -59,7 +79,11 @@ const WorkExperience = () => {
   ];
 
   return (
-    <section className="work-experience" id="features">
+    <motion.section
+          style={{ backgroundImage}}
+          className="work-experience"
+          // id="work-experience"
+    >
       <div className="work-header">
         <h2>{t('Our Work Experience')}</h2>
         <p>{t('Journey Through Development : Unveiling Our Work Experience. A Comprehensive Exploration of our dev Journey and Professional Evolution.')}</p>
@@ -104,7 +128,7 @@ const WorkExperience = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

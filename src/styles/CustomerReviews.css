@@ -20,13 +20,13 @@
 }
   
 .more-reviews {
-  border:1px solid #0C4B54;
-  color: #0C4B54;
+  border:1px solid var(--primary-color);
+  color: var(--primary-color);
   height: 3rem;
 }
 
 .more-reviews:hover {
-  background-color: #0C4B54;
+  background-color: var(--primary-color);
   color: #fff;
   border: none;
   transition: 0.5s all ease-out;

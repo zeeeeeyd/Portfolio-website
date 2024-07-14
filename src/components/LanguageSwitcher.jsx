@@ -12,7 +12,7 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <FormControl variant='outlined' size='small' style={{ marginLeft: '10px' }}>
+    <FormControl variant='outlined' size='small' style={{ marginLeft: '10px', marginTop:'5px'}}>
       <Select
         labelId="language-switcher-label"
         id="language-switcher"

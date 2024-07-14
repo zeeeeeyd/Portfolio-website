@@ -1,33 +1,55 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaPlay } from 'react-icons/fa'; 
-import { motion } from 'framer-motion';
+import { motion, useMotionTemplate, useMotionValue, animate, useTransform } from 'framer-motion';
+import { Canvas } from '@react-three/fiber';
+import { Stars } from '@react-three/drei';
 import { useTranslation } from 'react-i18next';
+import '../styles/MainLayout.css';
 import Header from '../components/Header';
 import AboutUs from '../components/AboutUs';
-import CustomerReviews from '../components/CustomerReviews';
-import hero from '../assets/333.png';
-import '../styles/MainLayout.css';
 import FAQ from '../components/FAQ';
-import Footer from '../components/Footer ';
-import WorkExperience from '../components/WorkExperience ';
+import WorkExperience from '../components/WorkExperience '
+import CustomerReviews from '../components/CustomerReviews'
+import Footer from '../components/Footer '
+
+const COLORS_TOP = ["#3572EF", "#3ABEF9", "#615EFC"];
 
 const MainLayout = () => {
-
   const { t } = useTranslation();
+  const color = useMotionValue(COLORS_TOP[0]);
+
+  useEffect(() => {
+    animate(color, COLORS_TOP, {
+      ease: "easeInOut",
+      duration: 10,
+      repeat: Infinity,
+      repeatType: "mirror",
+    });
+  }, [color]);
+
+  const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #020617 50%, ${color})`;
 
   const handleClickFeatures = () => {
-    window.scrollTo({ top: document.querySelector('.work-experience').offsetTop, behavior:'smooth' });
+    window.scrollTo({ top: document.querySelector('.work-experience').offsetTop, behavior: 'smooth' });
   };
 
   const handleClickStart = () => {
-    window.scrollTo({ top: document.querySelector('.get-started').offsetTop, behavior:'smooth' });
-  }
+    window.scrollTo({ top: document.querySelector('.get-started').offsetTop, behavior: 'smooth' });
+  };
 
   return (
     <div className="App">
       <Header />
       <main>
-        <section className="hero">
+        <motion.section
+          style={{ backgroundImage }}
+          className="hero"
+        >
+           <div className="canvas-container">
+            <Canvas>
+              <Stars radius={50} count={2500} factor={4} fade speed={2} />
+            </Canvas>
+          </div>
           <div className='hero-content'>
             <motion.button 
               className='mission-button'
@@ -40,7 +62,7 @@ const MainLayout = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              {t('Your')} <span>{t('Trusted')}</span> {t('Partner in Digital Innovation.')}
+              {t('Your')} <motion.span style={{ color }}>{t('Trusted')}</motion.span> {t('Partner in Digital Innovation.')}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }}
@@ -54,6 +76,7 @@ const MainLayout = () => {
                 className="get-started" 
                 onClick={handleClickStart}
                 whileHover={{ scale: 1.1 }}
+                style={{backgroundColor :color}}
               >
                 {t('Get Started')}
               </motion.button>
@@ -66,14 +89,7 @@ const MainLayout = () => {
               </motion.button>
             </div>
           </div>
-          <motion.img 
-            src={hero} 
-            alt="Hero" 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
-          />
-        </section>
+        </motion.section>
         <section id="about">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -92,7 +108,7 @@ const MainLayout = () => {
             <CustomerReviews />
           </motion.div>
         </section>
-        <section id="features" className="work-experience">
+        <section id="work-experience" className="work-experience">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

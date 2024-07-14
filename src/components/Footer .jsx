@@ -1,18 +1,38 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/Footer.css';
 import { FaLinkedin, FaXing, FaYoutube } from 'react-icons/fa';
+import { motion , useMotionValue, animate } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+
+const COLORS_TOP = ["#3572EF", "#3ABEF9", "#615EFC"];
 
 const Footer = () => {
+
+  const color = useMotionValue(COLORS_TOP[0]);
+  const navigate = useNavigate();
   const { t } = useTranslation();
+
+  const handleClick = () => {
+    navigate('/software-development');
+  }
+
+  useEffect(() => {
+    animate(color, COLORS_TOP, {
+      ease: "easeInOut",
+      duration: 10,
+      repeat: Infinity,
+      repeatType: "mirror",
+    });
+  }, [color]);
 
   return (
     <footer className="footer">
       <div className="footer-top">
         <h2>{t("Let's Stay connected")}</h2>
         <div className="footer-buttons">
-          <button className="get-in-touch">{t('Get in Touch')}</button>
-          <button className="view-work">{t('View Work')}</button>
+          <motion.button style={{ backgroundColor: color }} className="get-in-touch">{t('Get in Touch')}</motion.button>
+          <motion.button style={{ backgroundColor: color }} onClick={handleClick} className="view-work">{t('View Work')}</motion.button>
         </div>
       </div>
       <div className="footer-content">

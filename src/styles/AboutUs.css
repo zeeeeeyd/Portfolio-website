@@ -14,15 +14,15 @@
 }
 
 .read-story {
-  background-color: #0C4B54;
+  background-color: var(--primary-color);
   overflow: hidden;
   transition: transform 0.3s;
 }
 
 .read-story:hover {
   background-color: white;
-  color: #0C4B54;
-  border: 1px solid #0C4B54;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
   transition: 0.5s all ease-out;
 }
 

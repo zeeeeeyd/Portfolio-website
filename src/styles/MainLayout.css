@@ -1,64 +1,87 @@
+/* styles.css */
 .App {
   font-family: 'Poppins';
 }
 
 .hero {
-  background-color: #0C4B54;
   display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   margin-left: 2rem;
   gap: 1rem;
+  position: relative;
+  z-index: 1; 
 }
+
 .hero-content p {
   color: white;
+  text-align: center;
+  max-width: 60%;
 }
+
 .hero-content h1 {
   font-size: 5rem;
   font-weight: 600;
   color: #fff;
-  margin: 0;
+  margin: 2% 0;
+  text-align: center;
+  max-width: 70%;
 }
 
 .hero-content span {
-  color: #E8F549;
+  color: var(--secondary-color);
 }
 
-.hero img {
-  height: 40%;
-  width: 45%;
-}
-
-.hero-buttons{
+.hero-buttons {
   display: flex;
   margin-top: 3rem;
   gap: 1rem;
 }
 
 .get-started {
-  background-color: #E8F549;
-  color: #0C4B54;
+  color: white;
+}
+
+.get-started:hover{
+  border: none;
 }
 
 .watch-features {
   background-color: transparent;
   color: #fff;
-  border: 1px solid #E8F549;
+  border: 1px solid white;
 }
 
 .mission-button {
   background-color: transparent;
-  border: 1px solid #E8F549;
+  border: 1px solid white;
   color: #fff;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .mission-button .icon {
   margin-right: 8px;
+}
+
+.canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 50%;
 }
