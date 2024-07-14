@@ -3,91 +3,93 @@
     flex-direction: column;
     text-align: center;
     padding: 2rem 0;
-}
+  }
   
-.work-header h2 {
+  .work-header h2 {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 10px;
     color: white;
-}
+  }
   
-.work-header p {
+  .work-header p {
     font-size: 1rem;
     font-weight: 400;
     color: white;
     max-width: 50%;
     margin: 3% auto;
-}
+  }
   
-.work-grid {
+  .work-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     border-radius: 2rem;
     padding: 2rem;
     gap: 20px;
-}
+  }
   
-.work-column {
+  .work-column {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
+  }
   
-.work-item {
+  .work-item {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s;
-}
-.work-item:hover{
+  }
+  
+  .work-item:hover {
     transform: scale(1.03);
-}  
-.work-item::after {
+  }
+  
+  .work-item::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     height: 40%;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
-    pointer-events: none; 
-}
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    pointer-events: none;
+  }
   
-.work-item img {
+  .work-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-}
+  }
   
-.work-item h3 {
+  .work-item h3 {
     position: absolute;
     bottom: 20px;
     left: 20px;
     color: white;
     font-size: 1.5rem;
     margin: 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
     z-index: 1;
-}
+  }
   
-.work-column.left .work-item,
-.work-column.right .work-item {
+  .work-column.left .work-item,
+  .work-column.right .work-item {
     height: 100%;
-}
+  }
   
-.work-column.center .work-item {
+  .work-column.center .work-item {
     height: calc(50% - 10px);
-}
-
-.work-item-content {
+  }
+  
+  .work-item-content {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     height: 100%;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0, 0, 0, 0.9);
     color: white;
     padding: 20px;
     display: flex;
@@ -96,20 +98,120 @@
     align-items: center;
     opacity: 0;
     transition: opacity 0.3s;
-}
+  }
   
-.work-item:hover .work-item-content {
+  .work-item:hover .work-item-content {
     opacity: 1;
-}
-
-.explore-button{
+  }
+  
+  .explore-button {
     border: 1px solid var(--secondary-color);
     margin-top: 1rem;
-}
-
-.explore-button:hover{
+  }
+  
+  .explore-button:hover {
     background-color: var(--secondary-color);
     font-size: medium;
     border: none;
     transition: 0.5s all ease-out;
-}
+  }
+  
+  @media (max-width: 1200px) {
+    .work-header h2 {
+      font-size: 2rem;
+    }
+  
+    .work-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .work-header h2 {
+      font-size: 1.8rem;
+    }
+  
+    .work-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .work-header p {
+      max-width: 70%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+
+    .work-header h2 {
+      font-size: 1.5rem;
+    }
+  
+    .work-header p {
+      max-width: 80%;
+    }
+  
+    .work-grid {
+      padding: 1rem;
+      gap: 3rem;
+      margin: 0 5%;
+    }
+  
+    .work-item {
+      height: auto;
+    }
+  
+    .work-item h3 {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .work-grid{
+      margin: 0 3%;
+    }
+    .work-header h2 {
+      font-size: 1.3rem;
+    }
+  
+    .work-header p {
+      max-width: 90%;
+      font-size: .7rem;
+    }
+  
+    .work-grid {
+      padding: 0.5rem;
+      gap: 10px;
+    }
+  
+    .work-item h3 {
+      font-size: 1rem;
+    }
+
+    .explore-button {
+      border: 1px solid var(--secondary-color);
+      font-size: .7rem;
+      border-radius: .4rem;
+    }
+    
+    .explore-button:hover {
+      background-color: var(--secondary-color);
+      font-size: medium;
+      border: none;
+      transition: 0.5s all ease-out;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .work-header h2 {
+      font-size: 1.2rem;
+    }
+  
+    .work-header p {
+      max-width: 95%;
+    }
+  
+    .work-item h3 {
+      font-size: 0.9rem;
+    }
+  }
+  

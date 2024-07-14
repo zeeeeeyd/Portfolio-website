@@ -4,19 +4,39 @@
   align-items: center;
   padding: 10px;
   color: white;
-  background-color: #020617 ;
+  background-color: #020617;
+  position: relative;
 }
-.logo{
-  border: none;  
+
+.logo {
+  border: none;
   font-size: 1.3rem;
   font-family: 'Poppins';
+  cursor: pointer;
+  background: none;
+  color: white;
 }
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
 .nav a, .nav button {
   margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
 }
-.chat{
+
+.chat {
   border: 1px solid var(--secondary-color);
+  background: none;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
 }
+
 .chat:hover {
   background-color: var(--secondary-color);
   color: white;
@@ -24,4 +44,72 @@
   border: none;
   transition: 0.5s all ease-out;
 }
-  
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .nav a, .nav button {
+    margin: 0 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #020617;
+    opacity: 90%;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 1000;
+  }
+
+  .nav.open {
+    display: flex !important;
+  }
+
+  .nav a, .nav button {
+    margin: 10px 0;
+    width: 40%;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1rem;
+  }
+
+  .nav a, .nav button {
+    font-size: 0.9rem;
+  }
+
+  .chat {
+    font-size: 0.9rem;
+    padding: 5px 8px;
+  }
+}

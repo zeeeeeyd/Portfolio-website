@@ -2,27 +2,38 @@
   padding: 0px 20px;
   margin-bottom: 3rem;
 }
-.customer-reviews-content{
+
+.customer-reviews-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 2%;
+  flex-wrap: wrap;
 }
+
 .customer-reviews-content h2 {
   font-size: 3rem;
   font-weight: 600;
   max-width: 60%;
+  text-align: center;
 }
+
 .reviews {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  gap: 1rem;
 }
-  
+
 .more-reviews {
-  border:1px solid var(--primary-color);
+  border: 1px solid var(--primary-color);
   color: var(--primary-color);
   height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  cursor: pointer;
 }
 
 .more-reviews:hover {
@@ -31,4 +42,82 @@
   border: none;
   transition: 0.5s all ease-out;
 }
-  
+
+@media (max-width: 1200px) {
+  .customer-reviews-content h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .customer-reviews-content h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .customer-reviews {
+    padding: 0px 10px;
+}
+
+  .customer-reviews-content {
+    margin: 0 1%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .customer-reviews-content h2 {
+    font-size: 1.8rem;
+    max-width: 100%;
+  }
+
+  .reviews {
+    justify-content: center;
+  }
+
+  .more-reviews {
+    font-size: 0.9rem;
+    padding: 0 6px;
+    width: 50%;
+    border: none;
+    margin-bottom: 1rem;
+  }
+  .more-reviews:hover{
+    background-color: transparent;
+    color: var(--primary-color);
+  }
+}
+
+@media (max-width: 576px) {
+  .customer-reviews-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .reviews {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .more-reviews {
+    font-size: 0.9rem;
+    padding: 0 6px;
+    width: 50%;
+    border: none;
+    margin-bottom: 1rem;
+  }
+  .more-reviews:hover{
+    background-color: transparent;
+    color: var(--primary-color);
+  }
+}
+
+@media (max-width: 400px) {
+  .customer-reviews-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .more-reviews {
+    font-size: 0.8rem;
+    padding: 0 8px;
+  }
+}
