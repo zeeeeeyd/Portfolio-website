@@ -9,12 +9,8 @@
 }
 
 .logo {
-  border: none;
-  font-size: 1.3rem;
-  font-family: 'Poppins';
-  cursor: pointer;
-  background: none;
-  color: white;
+  width: 10%;
+  margin-left: 1rem;
 }
 
 .nav {

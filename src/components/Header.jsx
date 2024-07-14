@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
 import '../styles/Header.css';
 import { useNavigate } from 'react-router-dom';
+import logo from '../assets/Sirius_logo_typo.png'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +23,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <button onClick={handleClick} className="logo">Sirius</button>
+      <img onClick={handleClick} className='logo' src={logo}/>
       <nav className={`nav ${isOpen ? 'open' : ''}`} style={{ display: isOpen ? 'flex' : '' }}>
         <Link style={{ cursor: 'pointer' }} to="about" smooth={true} duration={500}>{t('About Us')}</Link>
         <Link style={{ cursor: 'pointer' }} to="faq" smooth={true} duration={500}>{t('FAQ')}</Link>
