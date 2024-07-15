@@ -1,25 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
 import '../styles/Header.css';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/Sirius_logo_typo.png'
+import logo from '../assets/Sirius_logo_typo.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const navRef = useRef(null);
 
   const handleClick = () => {
     navigate('/');
-  }
+  };
 
   const toggleMenu = () => {
-    console.log('Toggle menu called');
-    setIsOpen(!isOpen);
-    console.log('isOpen:', !isOpen);
-  }
+    setIsOpen((prevIsOpen) => !prevIsOpen);
+  };
+
+  const handleClickOutside = (event) => {
+    if (navRef.current && !navRef.current.contains(event.target) && event.target.className !== 'hamburger' && !event.target.className.includes('hamburger-line')) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const generateWhatsAppLink = () => {
     const phoneNumber = '0558776385';
@@ -29,8 +41,8 @@ const Header = () => {
 
   return (
     <header className="header">
-      <img onClick={handleClick} className='logo' src={logo} alt="Sirius Logo"/>
-      <nav className={`nav ${isOpen ? 'open' : ''}`} style={{ display: isOpen ? 'flex' : '' }}>
+      <img onClick={handleClick} className='logo' src={logo} alt="Sirius Logo" />
+      <nav ref={navRef} className={`nav ${isOpen ? 'open' : ''}`} style={{ display: isOpen ? 'flex' : '' }}>
         <Link style={{ cursor: 'pointer' }} to="about" smooth={true} duration={500}>{t('About Us')}</Link>
         <Link style={{ cursor: 'pointer' }} to="faq" smooth={true} duration={500}>{t('FAQ')}</Link>
         <Link style={{ cursor: 'pointer' }} to="blog" smooth={true} duration={500}>{t('Blog')}</Link>

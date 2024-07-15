@@ -34,7 +34,7 @@ const AboutUs = () => {
           <h2>{t('Our Story')}</h2>
           <div className='content-story-container'>
             <p>
-              {t("Welcome to Sirius, where innovation meets usability. We specialize in crafting cutting-edge software solutions, developing dynamic web and mobile applications, and designing intuitive user interfaces. Our mission is to transform ideas into impactful digital experiences that resonate with users worldwide. With a passion for technology and a commitment to excellence, we are your trusted partner in navigating the digital landscape.<br/>Let's build the future together.")}
+              {t("Welcome to Sirius, where innovation meets usability. We specialize in crafting cutting-edge software solutions, developing dynamic web and mobile applications, and designing intuitive user interfaces. Our mission is to transform ideas into impactful digital experiences that resonate with users worldwide. With a passion for technology and a commitment to excellence, we are your trusted partner in navigating the digital landscape.Let's build the future together.")}
             </p>
             <img src={immg} alt="" />
           </div>

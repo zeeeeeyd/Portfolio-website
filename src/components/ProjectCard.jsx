@@ -1,8 +1,12 @@
 import React from 'react';
 import { Card, CardContent, Typography, CardActions, Button, Rating } from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
+import { useTranslation } from 'react-i18next';
 
 const ProjectCard = ({ project }) => {
+
+  const { t } = useTranslation();
+
   if (!project || typeof project !== 'object') {
     return <Card><CardContent>Invalid project data</CardContent></Card>;
   }
@@ -37,18 +41,18 @@ const ProjectCard = ({ project }) => {
         </div>
       )}
       <CardContent sx={{ flexGrow: 1 }}>
-        <Typography sx={{color:"#0C4B54",fontFamily:"Poppins",fontWeight:'500'}} gutterBottom variant="h5" component="div">
+        <Typography sx={{color:"#3572EF",fontFamily:"Poppins",fontWeight:'500'}} gutterBottom variant="h5" component="div">
           {title || 'Untitled Project'}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {description || 'No description available'}
         </Typography>
         {typeof rating === 'number' && (
-          <Rating name="read-only" value={rating} readOnly sx={{color:"#d9ea24"}}/>
+          <Rating name="read-only" value={rating} readOnly sx={{color:"#3ABEF9"}}/>
         )}
       </CardContent>
       <CardActions>
-        <button style={{backgroundColor:"#0C4B54"}}>View Project</button>
+        <button style={{backgroundColor:"#3572EF"}}>{t('View Project')}</button>
       </CardActions>
     </Card>
   );

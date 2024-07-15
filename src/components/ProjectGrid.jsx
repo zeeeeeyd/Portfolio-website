@@ -2,10 +2,14 @@ import React from 'react';
 import { Grid, Typography, Box } from '@mui/material';
 import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
+import { useTranslation } from 'react-i18next';
 import Footer from "./Footer ";
 import Header from "./Header";
 
 const ProjectGrid = ({ title, subtitle, backgroundImage, projectData }) => {
+
+  const { t } = useTranslation();
+  
   return (
     <Box sx={{ width: '100%' }}>
       <Header />
@@ -58,7 +62,7 @@ const ProjectGrid = ({ title, subtitle, backgroundImage, projectData }) => {
             sx={{ 
               position: 'relative', 
               zIndex: 1, 
-              maxWidth: '800px',
+              maxWidth: '1000px',
               px: 2, 
               fontSize: { xs: '1.2rem', sm: '1.5rem', md: '2rem' },
               fontFamily: "Poppins"
@@ -85,7 +89,7 @@ const ProjectGrid = ({ title, subtitle, backgroundImage, projectData }) => {
             ))
           ) : (
             <Grid item xs={12} style={{display:'flex',justifyContent:'center'}}>
-              <Typography>Coming Soon !</Typography>
+              <Typography>{t('Coming Soon !')}</Typography>
             </Grid>
           )}
         </Grid>

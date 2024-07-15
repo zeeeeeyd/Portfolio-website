@@ -55,7 +55,15 @@ const resources = {
       "What services does Sirius provide?": "What services does Sirius provide?",
       "Sirius provides a wide range of services, including software development, mobile and web application development, UI/UX design, and AI-based solutions. We are equipped to handle projects of varying complexities and deliver solutions that meet your business requirements.": "Sirius provides a wide range of services, including software development, mobile and web application development, UI/UX design, and AI-based solutions. We are equipped to handle projects of varying complexities and deliver solutions that meet your business requirements.",
       "How can I contact customer support?": "How can I contact customer support?",
-      "You can contact our customer support by visiting the Contact Us page on our website or by emailing us at support@sirius.com. We are here to assist you with any queries or support you may need.": "You can contact our customer support by visiting the Contact Us page on our website or by emailing us at support@sirius.com. We are here to assist you with any queries or support you may need."
+      "You can contact our customer support by visiting the Contact Us page on our website or by emailing us at support@sirius.com. We are here to assist you with any queries or support you may need.": "You can contact our customer support by visiting the Contact Us page on our website or by emailing us at support@sirius.com. We are here to assist you with any queries or support you may need.",
+      "View Project":"View Project",
+      "Crafting intuitive and engaging user experiences for digital products":"Crafting intuitive and engaging user experiences for digital products",
+      "UI/UX Design Services":"UI/UX Design Services",
+      "AI-Based Applications":"AI-Based Applications",
+      "Innovative AI solutions to transform your business processes":"Innovative AI solutions to transform your business processes",
+      "Software Development":"Software Development",
+      "Building robust software solutions tailored to your business needs":"Building robust software solutions tailored to your business needs",
+      "Coming Soon !":"Coming Soon !"
     }
   },
   fr: {
@@ -111,18 +119,28 @@ const resources = {
       "What services does Sirius provide?": "Quels services Sirius fournit-il?",
       "Sirius provides a wide range of services, including software development, mobile and web application development, UI/UX design, and AI-based solutions. We are equipped to handle projects of varying complexities and deliver solutions that meet your business requirements.": "Sirius fournit une large gamme de services, y compris le développement de logiciels, le développement d'applications mobiles et web, la conception UI/UX et les solutions basées sur l'IA. Nous sommes équipés pour gérer des projets de complexité variable et fournir des solutions répondant aux exigences de votre entreprise.",
       "How can I contact customer support?": "Comment puis-je contacter le support client?",
-      "You can contact our customer support by visiting the Contact Us page on our website or by emailing us at support@sirius.com. We are here to assist you with any queries or support you may need.": "Vous pouvez contacter notre support client en visitant la page Contactez-nous sur notre site Web ou en nous envoyant un courriel à support@sirius.com. Nous sommes là pour vous aider avec toutes les questions ou le soutien dont vous pourriez avoir besoin."
+      "You can contact our customer support by visiting the Contact Us page on our website or by emailing us at support@sirius.com. We are here to assist you with any queries or support you may need.": "Vous pouvez contacter notre support client en visitant la page Contactez-nous sur notre site Web ou en nous envoyant un courriel à support@sirius.com. Nous sommes là pour vous aider avec toutes les questions ou le soutien dont vous pourriez avoir besoin.",
+      "View Project":"Voir Projet",
+      "Crafting intuitive and engaging user experiences for digital products":"Créer des expériences utilisateur intuitives et engageantes pour les produits numériques",
+      "UI/UX Design Services":"Services de conception UI/UX",
+      "AI-Based Applications":"Applications basées sur l'IA",
+      "Innovative AI solutions to transform your business processes":"Des solutions d'IA innovantes pour transformer vos processus métiers",
+      "Software Development":"Développement de logiciels",
+      "Building robust software solutions tailored to your business needs":"Créer des solutions logicielles robustes adaptées aux besoins de votre entreprise",
+      "Coming Soon !":"À venir !"
     }
   }
 };
+
+const savedLanguage = localStorage.getItem('language') || 'en';
 
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'en', 
+    lng: savedLanguage,
     interpolation: {
-      escapeValue: false, 
+      escapeValue: false,
     },
   });
 

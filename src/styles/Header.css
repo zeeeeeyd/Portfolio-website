@@ -29,7 +29,7 @@
   border: 1px solid var(--secondary-color);
   background: none;
   color: white;
-  padding: 5px 10px;
+  padding: 8px 15px;
   cursor: pointer;
 }
 
@@ -87,7 +87,10 @@
 
   .nav a, .nav button {
     margin: 10px 0;
-    width: 40%;
+    width: 70%;
+  }
+  .logo{
+    width: 22%;
   }
 
   .hamburger {
@@ -106,6 +109,6 @@
 
   .chat {
     font-size: 0.9rem;
-    padding: 5px 8px;
+    padding: 10px 20px;
   }
 }
