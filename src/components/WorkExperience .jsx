@@ -123,7 +123,7 @@ const WorkExperience = () => {
             <h3>{workItems[3].title}</h3>
             <div className="work-item-content">
               <p>{workItems[3].description}</p>
-              <button onClick={workItems[3].onClick} className="explore-button">{t('Explore more')}</button>
+              <button disabled onClick={workItems[3].onClick} className="explore-button">{t('Explore more')}</button>
             </div>
           </div>
         </div>

@@ -84,7 +84,7 @@ const ProjectGrid = ({ title, subtitle, backgroundImage, projectData }) => {
               </Grid>
             ))
           ) : (
-            <Grid item xs={12}>
+            <Grid item xs={12} style={{display:'flex',justifyContent:'center'}}>
               <Typography>Coming Soon !</Typography>
             </Grid>
           )}

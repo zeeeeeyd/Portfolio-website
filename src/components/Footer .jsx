@@ -17,6 +17,9 @@ const Footer = () => {
     navigate('/software-development');
   }
 
+  const handleDMClick = () => {
+    window.location.href = "mailto:saiadzeyd@gmail.com";
+};
   useEffect(() => {
     animate(color, COLORS_TOP, {
       ease: "easeInOut",
@@ -31,7 +34,7 @@ const Footer = () => {
       <div className="footer-top">
         <h2>{t("Let's Stay connected")}</h2>
         <div className="footer-buttons">
-          <motion.button style={{ backgroundColor: color }} className="get-in-touch">{t('Get in Touch')}</motion.button>
+          <motion.button style={{ backgroundColor: color }} onClick={handleDMClick} className="get-in-touch">{t('Get in Touch')}</motion.button>
           <motion.button style={{ backgroundColor: color }} onClick={handleClick} className="view-work">{t('View Work')}</motion.button>
         </div>
       </div>

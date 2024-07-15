@@ -4,6 +4,7 @@ import { motion, useMotionTemplate, useMotionValue, animate, useTransform } from
 import { Canvas } from '@react-three/fiber';
 import { Stars } from '@react-three/drei';
 import { useTranslation } from 'react-i18next';
+import { ToastContainer, toast } from 'react-toastify';
 import '../styles/MainLayout.css';
 import Header from '../components/Header';
 import AboutUs from '../components/AboutUs';
@@ -15,8 +16,21 @@ import Footer from '../components/Footer '
 const COLORS_TOP = ["#3572EF", "#3ABEF9", "#615EFC"];
 
 const MainLayout = () => {
+
   const { t } = useTranslation();
   const color = useMotionValue(COLORS_TOP[0]);
+
+  const handleClick = () => {
+    toast.info(t('Coming soon!'), {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
 
   useEffect(() => {
     animate(color, COLORS_TOP, {
@@ -54,6 +68,7 @@ const MainLayout = () => {
             <motion.button 
               className='mission-button'
               whileHover={{ scale: 1.1 }}
+              onClick={handleClick}
             >
               <FaPlay className='icon' /> {t('Find out our missions!')}
             </motion.button>
