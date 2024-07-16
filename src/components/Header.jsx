@@ -46,7 +46,7 @@ const Header = () => {
         <Link style={{ cursor: 'pointer' }} to="about" smooth={true} duration={500}>{t('About Us')}</Link>
         <Link style={{ cursor: 'pointer' }} to="faq" smooth={true} duration={500}>{t('FAQ')}</Link>
         <Link style={{ cursor: 'pointer' }} to="blog" smooth={true} duration={500}>{t('Blog')}</Link>
-        <Link style={{ cursor: 'pointer' }} to="features" smooth={true} duration={500}>{t('Features')}</Link>
+        <Link style={{ cursor: 'pointer' }} to="work-experience" smooth={true} duration={500}>{t('Features')}</Link>
         <LanguageSwitcher />
         <a href={generateWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="chat-button">
           <button className="chat">{t("Let's Talk")}</button>

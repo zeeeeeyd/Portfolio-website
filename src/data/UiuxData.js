@@ -42,6 +42,22 @@ const projectData = [
     description: "Developing a craft vitrine website for Artistic client.",
     rating: 4.0 
   },
+  {
+    title: "Setram mobile app ui",
+    images: [
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/9c3a5f203416623.6696e0231aa2a.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/66a35c203416623.6696e0231a2de.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/43cca4203416623.6696e02319dfa.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/1bc9ff203416623.6696e02318ee3.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/695823203416623.6696e0231af14.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/3c2f42203416623.6696e0231b393.png",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/94a9f5203416623.6696e023196a5.png",
+
+    ],
+    description: "A Mobile app user interfaces for algerian transport company 'Setram'.",
+    rating: 4.0 
+  },
 ];
 
 export default projectData;
+
